@@ -6,15 +6,30 @@ import './App.css';
 
 function App() {
 
+  const testChatLog = [
+    { username: 'Roger', message: 'Are you going to the basketball game tonight?' },
+    { username: 'David', message: 'Yes I am... what are you doing after the game?' },
+    { username: 'Roger', message: 'Going home... what about you?' },
+    { username: 'David', message: "I'm going to Denny's - you want to go too?" },
+    { username: 'Roger', message: 'Sounds good -- see you there' }
+  ];
+
   const [username, setUsername] = useState('Test user');
-  const [messageInput, setMessageInput] = useState('');
-  const [chatLog, setChatLog] = useState([])
+  const [messageInput, setMessageInput] = useState('New chat');
+  const [chatLog, setChatLog] = useState(testChatLog)
+
+	const onChange = (evt) => setMessageInput(evt.target.value);
+  const onSubmit = function(evt) {
+    evt.preventDefault();
+    console.log('Submitted!');
+  }
+  
 
   return (
     <div className="chat-container">
-      <Username />
-      <ChatLog />
-      <ChatInput />
+      <Username username={username} />
+      <ChatLog chatLog={chatLog} username={username} />
+      <ChatInput messageInput={messageInput} onChange={onChange} onSubmit={onSubmit} />
     </div>
   );
 }

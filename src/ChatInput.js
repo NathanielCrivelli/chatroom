@@ -1,9 +1,16 @@
 import React from 'react';
 
-function ChatInput() {
+function ChatInput(props) {
   return (
     <div className="chat-message-input">
-      <h4>Message input</h4>
+      <form onSubmit={props.onSubmit}>
+        <input type="text"
+          name="message-input"
+          id="message-input"
+          onChange={props.onChange}
+          value={props.messageInput}>
+        </input>
+      </form>
     </div>
   );
 }
