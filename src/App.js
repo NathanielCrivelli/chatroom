@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Chat from './Chat';
+import LoginPage from './LoginPage';
 
 function App(props) {
 
@@ -29,14 +30,19 @@ function App(props) {
     props.firebase.database().ref('chatLog').push(payload);
     setMessageInput('');
   }
-  
+  const onLogin = function(username) {
+    setUsername(username);
+    setAppState('chat');
+  }
 
   return (
+    appState === 'login' ?
+    <LoginPage onLogin={onLogin} /> :
     <Chat username={username}
-    chatLog={chatLog}
-    ChatInput={ChatInput}
-    onChange={onChange}
-    onSubmit={onSubmit} />
+      chatLog={chatLog}
+      ChatInput={messageInput}
+      onChange={onChange}
+      onSubmit={onSubmit} />
   );
 }
 
