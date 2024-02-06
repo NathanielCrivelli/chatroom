@@ -1,11 +1,11 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCCPx2db6ZY2zpR3i0imzUISdCXMZ20pD0",
-    authDomain: "chatroom-b8b2a.firebaseapp.com",
-    databaseURL: "https://chatroom-b8b2a-default-rtdb.firebaseio.com",
-    projectId: "chatroom-b8b2a",
-    storageBucket: "chatroom-b8b2a.appspot.com",
-    messagingSenderId: "961074388193",
-    appId: "1:961074388193:web:a77980f405af53cd84eba0"
-  };
+  apiKey: "AIzaSyBwn-ZcL_4N-y3lBtVFJpWomFM7DbvRdXs",
+  authDomain: "chatroom-jaffe.firebaseapp.com",
+  databaseURL: "https://chatroom-jaffe.firebaseio.com",
+  projectId: "chatroom-jaffe",
+  storageBucket: "chatroom-jaffe.appspot.com",
+  messagingSenderId: "423577160816",
+  appId: "1:423577160816:web:2a6af8076c7992cbfd38b5"
+};
 
 export default firebaseConfig;
