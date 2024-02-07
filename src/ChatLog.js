@@ -13,6 +13,7 @@ function ChatLog(props) {
           if (props.username === chat.username) {
             return (
               <div className="chat-item chat-from-me" key={'chat'+idx}>
+                <h4>{chat.date}</h4>
                 <h6>{chat.username}</h6>
                 <h4>{chat.message}</h4>
               </div>
@@ -20,6 +21,7 @@ function ChatLog(props) {
           } else {
             return (
               <div className="chat-item" key={'chat'+idx}>
+                 <h4>{chat.date}</h4>
                  <h6>{chat.username}</h6>
                  <h4>{chat.message}</h4>
               </div>

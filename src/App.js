@@ -6,7 +6,7 @@ import LoginPage from './LoginPage';
 function App(props) {
 
   useEffect(() => {
-    props.firebase.database().ref('').on('value', snapshot => {
+    props.firebase.database().ref('chatlog').on('value', snapshot => {
       let items = snapshot.val();
       if (items) {
         items = Object.values(items);
@@ -26,8 +26,8 @@ function App(props) {
   const onSubmit = function(evt) {
     evt.preventDefault();
     if (messageInput.length === 0) return;
-    let payload = {message: messageInput, username: username};
-    props.firebase.database().ref('').push(payload);
+    let payload = {message: messageInput, username: username, date: new Date().toDateString()};
+    props.firebase.database().ref('chatlog').push(payload);
     setMessageInput('');
   }
   const onLogin = function(username) {
